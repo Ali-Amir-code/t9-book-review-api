@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "d634c9ec-196a-4e75-b5cb-371bd8d589ef",
+		"name": "book-review-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47245757",
+		"_collection_link": "https://muhammadaliamir24-4815378.postman.co/workspace/Ali-Amir's-Workspace~818b7393-1ff7-475e-8c47-c4c6f03265ed/collection/47245757-d634c9ec-196a-4e75-b5cb-371bd8d589ef?action=share&source=collection_link&creator=47245757"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"aliamir\",\r\n    \"email\": \"someone@example.com\",\r\n    \"password\": \"123123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"someone@example.com\",\r\n    \"password\": \"123123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post new book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTQzZWMzNGYzNmUxNzRiOTBmYjM4NCIsImlhdCI6MTc1NDU0NTk3OSwiZXhwIjoxNzU1MTUwNzc5fQ.H1QAqMxPqYXKeIMzp-neLnaYcf8OxWHFRlhERL_QAJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Book title2",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "someonw2",
+							"type": "text"
+						},
+						{
+							"key": "genre",
+							"value": "fiction2",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "fantasy book2",
+							"type": "text"
+						},
+						{
+							"key": "ISBN",
+							"value": "123-4-56789-012-12",
+							"type": "text"
+						},
+						{
+							"key": "cover",
+							"type": "file",
+							"src": "/D:/Programming/Internship/t9-book-review-api/book-cover.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTQzZWMzNGYzNmUxNzRiOTBmYjM4NCIsImlhdCI6MTc1NDU0NTk3OSwiZXhwIjoxNzU1MTUwNzc5fQ.H1QAqMxPqYXKeIMzp-neLnaYcf8OxWHFRlhERL_QAJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Book title2",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "someonw2",
+							"type": "text"
+						},
+						{
+							"key": "genre",
+							"value": "fiction2",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "fantasy book2",
+							"type": "text"
+						},
+						{
+							"key": "ISBN",
+							"value": "123-4-56789-012-12",
+							"type": "text"
+						},
+						{
+							"key": "cover",
+							"type": "file",
+							"src": "/D:/Programming/Internship/t9-book-review-api/book-cover.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
