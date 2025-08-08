@@ -4,6 +4,8 @@ dotenv.config();
 import express, { json } from 'express';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import cors from 'cors'
+
 import connectDB from './config/db.js';
 
 import authRoutes from './routes/auth.js';
@@ -13,6 +15,8 @@ import reviewsRoutes from './routes/reviews.js';
 connectDB();
 
 const app = express();
+
+app.use(cors());
 app.use(json());
 
 app.use('/uploads', express.static(join(dirname(fileURLToPath(import.meta.url)), 'uploads')));

@@ -5,4 +5,12 @@ const storage = diskStorage({
   filename:    (req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`)
 });
 
-export default multer({ storage });
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype.startsWith('image/')) {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+
+export default multer({ storage, fileFilter });
